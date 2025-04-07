@@ -90,7 +90,7 @@ if user_input:
     else:
         st.session_state["messages"].append({"role": "user", "content": user_input})
         response = openai.chat.completions.create(
-            model="gpt-3.5-turbo",
+            model="gpt-4-turbo",
             messages=st.session_state["messages"]
         )
         response_text = response["choices"][0]["message"]["content"]
