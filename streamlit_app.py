@@ -89,8 +89,8 @@ if user_input:
         st.write("Chat ended. Refresh to start a new discussion.")
     else:
         st.session_state["messages"].append({"role": "user", "content": user_input})
-        response = openai.ChatCompletion.create(
-            model="gpt-4-turbo",
+        response = openai.chat.completions.create(
+            model="gpt-3.5-turbo",
             messages=st.session_state["messages"]
         )
         response_text = response["choices"][0]["message"]["content"]
